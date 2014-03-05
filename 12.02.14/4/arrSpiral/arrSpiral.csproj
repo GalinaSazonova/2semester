@@ -7,7 +7,7 @@
     <ProjectGuid>{F727C37E-4D56-447E-8FAE-9EF9A43EEAB9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>arrSpiral</RootNamespace>
+    <RootNamespace>ArrSpiral</RootNamespace>
     <AssemblyName>arrSpiral</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

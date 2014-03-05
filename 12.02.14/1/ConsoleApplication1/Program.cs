@@ -1,9 +1,17 @@
 ﻿
 namespace ConsoleApplication1
 {
+    /// <summary>
+    /// User enter a number, he want to know a factorial, and that meaning appears on console
+    /// </summary>
     class Program
     {
-        public static double Factorial (int n)
+        /// <summary>
+        /// Count the meaning of factiorial
+        /// </summary>
+        /// <param name="n">Number to count</param>
+        /// <returns>Meaning of factiorial of n</returns>
+        public static double Factorial(int n)
         {
             return n <= 1 ? 1 : n * Factorial(n - 1);
         }

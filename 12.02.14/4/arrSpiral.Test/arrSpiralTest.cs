@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace arrSpiral.Test
+namespace ArrSpiral.Test
 {
-    using arrSpiral;
+    using ArrSpiral;
     [TestClass]
     public class arrSpiralTest
     {
@@ -21,9 +21,16 @@ namespace arrSpiral.Test
             arr[2, 1] = 8;
             arr[2, 2] = 9;
             int[] helpArr = new int[9];
-            SpiralWalk(arr, 3, ref helpArr);
+            helpArr = Program.SpiralWalk(arr, 3);
             Assert.AreEqual(5, helpArr[0]);
             Assert.AreEqual(3, helpArr[8]);
+        }
+
+        [TestMethod]
+        public void SpiralWalkTestWithEmptyArray()
+        {
+            int[,] arr = new int[0, 0];
+            Program.SpiralWalk(arr, 0);
         }
     }
 }

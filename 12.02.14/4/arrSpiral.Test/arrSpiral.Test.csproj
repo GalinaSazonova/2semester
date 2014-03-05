@@ -6,7 +6,7 @@
     <ProjectGuid>{1C1531B9-DAC1-4903-B383-0406BD7FB90F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>arrSpiral.Test</RootNamespace>
+    <RootNamespace>ArrSpiral.Test</RootNamespace>
     <AssemblyName>arrSpiral.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

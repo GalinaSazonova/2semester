@@ -2,8 +2,15 @@
 
 namespace MyNameSpace
 {
+    /// <summary>
+    /// User enter size of array, it fills with random numbers  and appears on console, then sorting, and appears resut of sort
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Sorting array from bigger to smaller
+        /// </summary>
+        /// <param name="arr">Array to sort</param>
         public static void BubbleSort(int[] arr)
         {
             for (int i = 0; i < arr.Length; ++i)
@@ -20,6 +27,10 @@ namespace MyNameSpace
             }
         }
 
+        /// <summary>
+        /// Print array on console
+        /// </summary>
+        /// <param name="arr">Array to print</param>
         public static void PrintArray(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)

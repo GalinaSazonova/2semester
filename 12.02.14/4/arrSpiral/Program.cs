@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace arrSpiral
+namespace ArrSpiral
 {
     public class Program
     {
@@ -16,10 +16,10 @@ namespace arrSpiral
         /// <param name="arr">two-dim array, we need to work with</param>
         /// <param name="arrSize"></param>
         /// <param name="helpArr">array to keep values</param>
-       
-        public static void SpiralWalk(int[,] arr, int arrSize, ref int[] helpArr)
+        public static int[] SpiralWalk(int[,] arr, int arrSize)
         {
-            int begElementPlace = arrSize / 2;
+            int[] helpArr = new int[arrSize * arrSize];
+            int beginElementPlace = arrSize / 2;
             int nextElI = -1;
             int nextElJ = -1;
             int placeInHelpArr = 0;
@@ -28,9 +28,9 @@ namespace arrSpiral
             {
                 if (prevStep == 0)
                 {
-                    helpArr[placeInHelpArr] = arr[begElementPlace, begElementPlace];
-                    nextElI = begElementPlace;
-                    nextElJ = begElementPlace + 1;
+                    helpArr[placeInHelpArr] = arr[beginElementPlace, beginElementPlace];
+                    nextElI = beginElementPlace;
+                    nextElJ = beginElementPlace + 1;
                     placeInHelpArr++;
                     prevStep = 1;
                     continue;
@@ -112,8 +112,13 @@ namespace arrSpiral
                     }
                 }
             }
+            return helpArr;
         }
 
+        /// <summary>
+        /// Print array on console
+        /// </summary>
+        /// <param name="arr">Array to print</param>
         public static void PrintOneDimArray(int[] arr)
         {
            for (int i = 0; i < arr.Length; i++)
@@ -123,6 +128,11 @@ namespace arrSpiral
            Console.WriteLine();
         }
 
+        /// <summary>
+        /// Print two dim array
+        /// </summary>
+        /// <param name="arr">Array to print</param>
+        /// <param name="arrSize">Size of array</param>
         public static void PrintTwoDimArray(int[,] arr, int arrSize)
         {
             for (int i = 0; i < arrSize; i++)
@@ -156,9 +166,7 @@ namespace arrSpiral
                     }
                 }
                 PrintTwoDimArray(arr, arrSize);
-                int[] helpArr = new int[arrSize * arrSize];
-                SpiralWalk(arr, arrSize, ref helpArr);
-                PrintOneDimArray(helpArr);
+                PrintOneDimArray(SpiralWalk(arr, arrSize));
             }
         }
     }
