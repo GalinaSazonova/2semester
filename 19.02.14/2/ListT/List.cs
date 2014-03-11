@@ -51,7 +51,7 @@ namespace ListT
                 return;
             }
             ListElement taleElement = head;
-            for (int i = 0; i < size; i++)
+            for (int i = 1; i < size; i++)
             {
                 taleElement = taleElement.Next;
             }
