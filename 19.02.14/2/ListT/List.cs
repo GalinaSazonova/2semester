@@ -9,8 +9,19 @@ namespace ListT
     {
         private class ListElement
         {
+            /// <summary>
+            /// Value of List element.
+            /// </summary>
             public T Value { get; set; }
+
+            /// <summary>
+            /// Reference on next element.
+            /// </summary>
             public ListElement Next { get; set; }
+
+            /// <summary>
+            /// Reference on previous element.
+            /// </summary>
             public ListElement Back { get; set; }
             public ListElement(T value)
             {
@@ -43,7 +54,7 @@ namespace ListT
         /// Insert new element into tale of list
         /// </summary>
         /// <param name="value">Value to enter</param>
-        public void InsertToTale(T value)
+        public void InsertToTail(T value)
         {
             if (size == 0)
             {
@@ -81,7 +92,7 @@ namespace ListT
             }
             if (position == size)
             {
-                InsertToTale(value);
+                InsertToTail(value);
                 return;
             }
             ListElement temp = head;

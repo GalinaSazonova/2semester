@@ -6,23 +6,19 @@ namespace StackT
     /// </summary>
     public class Stack
     {
+        /// <summary>
+        /// Contents of the stack.
+        /// </summary>
         private class StackElement
         {
-            private int aValue;
+            /// <summary>
+            /// Value of stack element.
+            /// </summary>
+            public int Value { get; set; }
 
-            public int Value
-            {
-                get
-                {
-                    return aValue;
-                }
-
-                set
-                {
-                    this.aValue = value;
-                }
-            }
-
+            /// <summary>
+            /// Reference on next element.
+            /// </summary>
             public StackElement Next { get; set; }
         }
 
@@ -67,42 +63,6 @@ namespace StackT
             return head == null;
         }
 
-        /// <summary>
-        /// Check if value is in the stack
-        /// </summary>
-        /// <param name="valueToCheck"></param>
-        /// <returns>true if valueToCheck in stack</returns>
-        public bool Contains(int valueToCheck)
-        {
-            var temp = head;
-            bool contain = false;
-            while (temp != null)
-            {
-                if (temp.Value == valueToCheck)
-                {
-                    contain = true;
-                }
-                temp = temp.Next;
-            }
-            return contain;
-        }
-
-        /// <summary>
-        /// Count how many elements are already in stack
-        /// </summary>
-        /// <returns>number of elements</returns>
-        public int Count()
-        {
-            var temp = head;
-            int count = 0;
-            while (temp != null)
-            {
-                count++;
-                temp = temp.Next;
-            }
-            return count;
-        }
-        
         /// <summary>
         /// Print stack on console
         /// </summary>
