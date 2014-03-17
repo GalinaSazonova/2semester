@@ -1,4 +1,4 @@
-﻿
+﻿//Is tested earlier
 using System;
 namespace StackCalcul
 {

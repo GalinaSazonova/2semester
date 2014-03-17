@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StackCalcul
 {
     /// <summary>
     /// Stack based on array
     /// </summary>
-    class StackArray : StackInterface
+    public class StackArray : StackInterface
     {
         private int[] stack = new int[101];
         private int size;

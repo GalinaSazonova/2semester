@@ -2,7 +2,7 @@
 
 namespace StackCalcul
 {
-    class Program
+    public class Program
     {
         /// <summary>
         /// Calculating exression written in postfix
@@ -10,7 +10,7 @@ namespace StackCalcul
         /// <param name="stack"></param>
         /// <param name="line"></param>
         /// <returns></returns>
-       static int Calculator(StackInterface stack, string line)
+       public static int Calculator(StackInterface stack, string line)
         {
             int mainResult = 0;
             for (int i = 0; i != line.Length; i++)
@@ -58,9 +58,7 @@ namespace StackCalcul
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Error: fuuu!! there is a zero in division!!!\n");
-                                    mainResult = -99999;
-                                    break;
+                                    throw new DivideByZeroException();
                                 }
                             }
                         default:
@@ -83,8 +81,8 @@ namespace StackCalcul
         {
             Console.WriteLine("Please, enter your expression");
             string line = Console.ReadLine();
-            //StackArray stack = new StackArray();
-            Stack stack = new Stack();
+            StackArray stack = new StackArray();
+            //Stack stack = new Stack();
             Console.WriteLine("Result of calculating: {0}", Calculator(stack, line));
         }
     }
