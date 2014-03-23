@@ -1,7 +1,7 @@
 ﻿namespace StackCalcul
 {
     /// <summary>
-    /// Interface for stack with maun functions.
+    /// Interface for stack with main functions.
     /// </summary>
     public interface StackInterface
     {
