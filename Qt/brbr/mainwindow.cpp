@@ -7,12 +7,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->webView->load(QUrl("http://google.com/"));
-    //ui->pushButton->setIcon(QIcon("cat.jpg"));
+
     connect(ui->pushButton_3, &QPushButton::pressed, this, &MainWindow::on_pushButton_3_clicked);
     connect(ui->pushButton, &QPushButton::pressed, this, &MainWindow::on_pushButton_clicked);
     connect(ui->pushButton_2, &QPushButton::pressed, this, &MainWindow::on_pushButton_2_clicked);
     connect(ui->pushButton_4, &QPushButton::pressed, this, &MainWindow::on_pushButton_4_clicked);
-
 }
 
 MainWindow::~MainWindow()
