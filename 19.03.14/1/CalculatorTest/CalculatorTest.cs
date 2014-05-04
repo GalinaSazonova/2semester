@@ -25,7 +25,7 @@ namespace CalculatorTest
             calculator.AddNumber(55);
             calculator.AddSign('+');
             calculator.AddNumber(55);
-            calculator.Calculator();
+            calculator.Calculate();
             Assert.AreEqual(110, Convert.ToInt32(calculator.Result()));
         }
 

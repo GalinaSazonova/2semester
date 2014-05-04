@@ -18,7 +18,7 @@ namespace Calculator
             calculator = new CalculatorClass(); 
         }
 
-        bool answerInTextBox = false;
+        private bool answerInTextBox = false;
 
         public void PushNumber(object sender, EventArgs e)
         {
@@ -72,15 +72,13 @@ namespace Calculator
                 textBox2.AppendText(calculator.Result());
                 textBox2.AppendText(pushedButton.Text);
                 calculator.AddSign(Convert.ToChar(pushedButton.Text));
+                return;
             }
             if (!answerInTextBox && textBox1.TextLength != 0 && textBox2.TextLength != 0)
             {
-                calculator.AddNumber(Convert.ToInt32(textBox1.Text));
-                textBox1.Clear();
-                textBox2.Clear();
                 try
                 {
-                    textBox2.AppendText(calculator.Result());
+                    calculator.AddNumber(Convert.ToInt32(textBox1.Text));
                 }
                 catch (DivideByZeroException exceptioni)
                 {
@@ -89,6 +87,9 @@ namespace Calculator
                     calculator.Clean();
                     MessageBox.Show("Divide by zero");
                 }
+                textBox2.AppendText(calculator.Result());
+                textBox1.Clear();
+                textBox2.Clear();
                 textBox2.AppendText(pushedButton.Text);
                 calculator.AddSign(Convert.ToChar(pushedButton.Text));
                 return;
@@ -99,21 +100,21 @@ namespace Calculator
         {
             if (textBox1.TextLength != 0 && textBox2.TextLength != 0 && !answerInTextBox)
             {
-                calculator.AddNumber(Convert.ToInt32(textBox1.Text));
-                answerInTextBox = true;
-                textBox2.Clear();
-                textBox1.Clear();
                 try
                 {
-                    calculator.Calculator();
+                    calculator.AddNumber(Convert.ToInt32(textBox1.Text));
                 }
                 catch (DivideByZeroException exception)
                 {
                     textBox2.Clear();
                     textBox1.Clear();
                     calculator.Clean();
+                    answerInTextBox = false;
                     MessageBox.Show("Divide by zero");
                 }
+                answerInTextBox = true;
+                textBox2.Clear();
+                textBox1.Clear();
                 textBox2.AppendText(calculator.Result());
             }
         }

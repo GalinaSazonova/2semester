@@ -36,7 +36,7 @@ namespace Calculator
             else
             {
                 this.stack.Push(number);
-                Calculator();
+                Calculate();
             }
         }
 
@@ -66,7 +66,7 @@ namespace Calculator
                 {
                     this.stack.Push(afterHead);
                     this.stack.Push(inHead);
-                    Calculator();
+                    Calculate();
                     this.stack.Push(sign);
                 }
             }
@@ -75,7 +75,7 @@ namespace Calculator
         /// <summary>
         /// Calculating, if there is right expression.
         /// </summary>
-        public void Calculator()
+        public void Calculate()
         {
             int secondOperand = 0;
             int firstOperand = 0;

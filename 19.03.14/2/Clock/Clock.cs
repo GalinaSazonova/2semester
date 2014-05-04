@@ -10,16 +10,30 @@ using System.Windows.Forms;
 
 namespace Clock
 {
+    /// <summary>
+    /// Class for clock.
+    /// </summary>
     public partial class Clock : Form
     {
         public Clock()
         {
             InitializeComponent();
         }
-         private void timer1_Tick(object sender, EventArgs e)
+
+        /// <summary>
+        /// Writes current time in label.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TimerTick(object sender, EventArgs e)
         {
             this.label1.Text = DateTime.Now.ToLongTimeString();
         }
+
+         private void label1_Click(object sender, EventArgs e)
+         {
+
+         }
 
     }
 }
