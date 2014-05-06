@@ -41,11 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoringStandartHashFunction.cs" />
-    <Compile Include="CoolHashFunctionByMe.cs" />
     <Compile Include="Hash.cs" />
     <Compile Include="HashFunctionInterface.cs" />
-    <Compile Include="HashFunctionToCheck.cs" />
     <Compile Include="List.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
