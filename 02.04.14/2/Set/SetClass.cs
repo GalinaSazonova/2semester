@@ -49,33 +49,28 @@ namespace Set
             elements.Remove(elements.FindPosition(value));
         }
 
-        
         public static SetClass<T> Intersection(SetClass<T> firstSet,SetClass<T> secondSet)
         {
             SetClass<T> resultSet = new SetClass<T>();
-            foreach (T element in secondSet.elements)
+            foreach (var element in secondSet.elements)
             {
-                if (firstSet.Contains(element))
+                if (firstSet.Contains((T)element))
                 {
-                    resultSet.InsertElement(element);
+                    resultSet.InsertElement((T)element);
                 }
             }
             return resultSet;
         }
 
-        public void Intersection(SetClass<T> secondSet)
-        {
-
-        }
         /// <summary>
         /// Union of 2 sets, 1 set is result of union.
         /// </summary>
         /// <param name="secondSet"></param>
         public void Union(SetClass<T> secondSet)
         {
-            foreach (T element in secondSet.elements)
+            foreach (var element in secondSet.elements)
             {
-                InsertElement(element);
+                InsertElement((T)element);
             }
         }
 

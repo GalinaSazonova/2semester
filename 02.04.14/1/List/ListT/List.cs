@@ -244,16 +244,16 @@ namespace ListT
               //  listInString += ", " + Convert.ToString(temp.Value);
               //  temp = temp.Next;
             //}
-            foreach(ListElement temp in this)
+            foreach(var temp in this)
             {
-                listInString += Convert.ToString(temp.Value);
+                listInString += Convert.ToString(temp);
             }
             return listInString;
         }
 
         public object Current
         {
-            get {return CurrentEl(numerator); }
+            get {return CurrentEl(numerator).Value; }
         }
 
         public bool MoveNext()

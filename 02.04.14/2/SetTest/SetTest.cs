@@ -39,7 +39,6 @@ namespace SetTest
             firstSet.InsertElement(2);
             secondSet.InsertElement(2);
             secondSet.InsertElement(3);
-            //SetClass<int> result = firstSet.Intersection(firstSet, secondSet);
             var result = SetClass<int>.Intersection(firstSet, secondSet);
             Assert.IsTrue(result.Contains(2));
         }
